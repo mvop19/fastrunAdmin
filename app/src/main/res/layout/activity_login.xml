@@ -82,16 +82,47 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Or \n Continue With"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Or \n Continue With"
         android:textAlignment="center"
         android:textColor="@color/green"
-        android:fontFamily="@font/montserrat_alternates"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/GoogleButton"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:background="@drawable/whitebutton"
+        android:drawableLeft="@drawable/google_icon_2"
+        android:layout_marginTop="12dp"
+        android:paddingLeft="15dp"
+        android:text="Google"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/FacebookButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/FacebookButton"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:background="@drawable/whitebutton"
+        android:layout_marginTop="12dp"
+        android:drawableLeft="@drawable/facebook_3_1"
+        android:paddingLeft="15dp"
+        android:text="Facebook"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/GoogleButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
