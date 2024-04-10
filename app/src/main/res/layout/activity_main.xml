@@ -38,12 +38,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        app:cardCornerRadius="15dp"
+        android:outlineSpotShadowColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="#f4f4f4"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
