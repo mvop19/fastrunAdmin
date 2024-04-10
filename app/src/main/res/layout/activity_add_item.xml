@@ -104,7 +104,7 @@
         android:id="@+id/selectedImage"
         android:layout_width="175dp"
         android:layout_height="110dp"
-        android:src="@drawable/coffee"
+        android:src="@drawable/addimage"
         android:scaleType="fitCenter"
          />
 </androidx.cardview.widget.CardView>
