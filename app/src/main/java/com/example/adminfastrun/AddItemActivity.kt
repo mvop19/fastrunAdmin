@@ -20,6 +20,9 @@ class AddItemActivity : AppCompatActivity() {
         binding.selectImage.setOnClickListener {
             pickimage.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
+        binding.backButton.setOnClickListener {
+            finish()
+        }
     }
     val pickimage : ActivityResultLauncher<PickVisualMediaRequest> =
         registerForActivityResult(ActivityResultContracts.PickVisualMedia()){uri ->
