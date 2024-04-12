@@ -339,7 +339,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView7"
+        android:id="@+id/orderStatusButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
@@ -366,7 +366,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_alternates"
-                android:text="Order Dispatch"
+                android:text="Order Status"
                 android:layout_marginTop="28dp"
                 android:textColor="@color/orange"
                 app:layout_constraintEnd_toEndOf="@+id/imageView10"
@@ -384,8 +384,8 @@
         app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="@+id/cardView6"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView7"
-        app:layout_constraintTop_toTopOf="@+id/cardView7">
+        app:layout_constraintStart_toEndOf="@+id/orderStatusButton"
+        app:layout_constraintTop_toTopOf="@+id/orderStatusButton">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:background="@drawable/cardgreen"

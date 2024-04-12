@@ -22,5 +22,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AllItemActivity::class.java)
             startActivity(intent)
         }
+        binding.orderStatusButton.setOnClickListener {
+            val intent = Intent(this,OrderStatusActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
