@@ -49,7 +49,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/montserrat_alternates"
         android:text="Edit Your Profile"
-        android:drawableLeft="@drawable/edittextshape"
+        android:drawableLeft="@drawable/edit"
         android:gravity="center"
         android:clickable="true"
         android:textColor="@color/green"
