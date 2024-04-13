@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "273812913552",
+    "project_id": "fastrun-c0a1f",
+    "storage_bucket": "fastrun-c0a1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273812913552:android:9f97c28c1bb53bd6e08715",
+        "android_client_info": {
+          "package_name": "com.example.adminfastrun"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHWbLfKvK7Wb4mFy9_DSVmhJIJGFFpVpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
