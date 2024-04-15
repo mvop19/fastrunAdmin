@@ -18,6 +18,9 @@ class OrderStatusActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        binding.backButton.setOnClickListener{
+            finish()
+        }
         val customerName = arrayListOf(
             "Matt Zapata",
             "Michael Pangelinan",
