@@ -1,21 +1,23 @@
 package com.example.adminfastrun
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.adminfastrun.databinding.ActivityLoginBinding
 import com.example.adminfastrun.model.UserModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
@@ -36,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken("273812913552-u7dfjm254dncudebujgoqqii6lkgjddd.apps.googleusercontent.com").requestEmail().build()
         //initialize Firebase Auth
@@ -56,6 +59,10 @@ class LoginActivity : AppCompatActivity() {
                 createUserAccount(email, password)
             }
 
+        }
+        binding.googleButton.setOnClickListener {
+            val signIntent = googleSignInclient.signInIntent
+            launcher.launch(signIntent)
         }
         binding.dontHaveAccountButton.setOnClickListener {
             val intent = Intent(this,SignUpActivity::class.java)
@@ -95,6 +102,35 @@ class LoginActivity : AppCompatActivity() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             database.child("user").child(it).setValue(user)
+        }
+    }
+
+
+    //launcher for google signin
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        result ->
+        if (result.resultCode == Activity.RESULT_OK){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            if (task.isSuccessful){
+                val account : GoogleSignInAccount = task.result
+                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                auth.signInWithCredential(credential).addOnCompleteListener { authTask ->
+                    if(authTask.isSuccessful){
+                        //successfully sign in with Google
+                        Toast.makeText(this,"Successfully Sign In With Google", Toast.LENGTH_SHORT).show()
+//                        updateUi(authTask.result?.user)
+                        startActivity(Intent(this, MainActivity::class.java))
+                    } else{
+
+                        //successfully sign in with Google
+                        Toast.makeText(this,"Google Sign In Failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            else{
+                //successfully sign in with Google
+                Toast.makeText(this,"Google Sign In Failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
