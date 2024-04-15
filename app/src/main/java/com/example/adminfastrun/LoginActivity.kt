@@ -10,6 +10,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.adminfastrun.databinding.ActivityLoginBinding
 import com.example.adminfastrun.model.UserModel
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -24,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var password:String
     private lateinit var auth:FirebaseAuth
     private lateinit var database:DatabaseReference
+    private lateinit var googleSignInclient: GoogleSignInClient
 
     private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
@@ -32,11 +36,14 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
-
+        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken("273812913552-u7dfjm254dncudebujgoqqii6lkgjddd.apps.googleusercontent.com").requestEmail().build()
         //initialize Firebase Auth
         auth = Firebase.auth
         //initialize Firebase database
         database = Firebase.database.reference
+        // initialize google Sign in
+        googleSignInclient = GoogleSignIn.getClient(this,googleSignInOptions)
 
         binding.loginButton.setOnClickListener {
             // get text from edit text
