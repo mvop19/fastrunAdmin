@@ -56,4 +56,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
     implementation("com.google.firebase:firebase-analytics")
+
+    // for Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
