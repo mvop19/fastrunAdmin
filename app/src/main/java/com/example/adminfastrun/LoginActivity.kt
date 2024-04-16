@@ -118,8 +118,8 @@ class LoginActivity : AppCompatActivity() {
                     if(authTask.isSuccessful){
                         //successfully sign in with Google
                         Toast.makeText(this,"Successfully Sign In With Google", Toast.LENGTH_SHORT).show()
-//                        updateUi(authTask.result?.user)
-                        startActivity(Intent(this, MainActivity::class.java))
+                        updateUi(authTask.result?.user)
+                        finish()
                     } else{
 
                         //successfully sign in with Google
@@ -133,7 +133,15 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
+    //check if user is already logged in
+    override fun onStart() {
+        super.onStart()
+        val currentUser :FirebaseUser? = auth.currentUser
+        if (currentUser!=null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
     private fun updateUi(user: FirebaseUser?) {
         startActivity(Intent(this, MainActivity::class.java))
         finish()

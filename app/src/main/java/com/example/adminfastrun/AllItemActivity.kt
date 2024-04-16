@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.adminfastrun.adapter.AddItemAdapter
+import com.example.adminfastrun.adapter.MenuItemAdapter
 import com.example.adminfastrun.databinding.ActivityAllItemBinding
 
 class AllItemActivity : AppCompatActivity() {
@@ -28,7 +28,7 @@ class AllItemActivity : AppCompatActivity() {
         binding.backButton.setOnClickListener {
             finish()
         }
-        val adapter = AddItemAdapter(
+        val adapter = MenuItemAdapter(
             ArrayList(menuFoodName),
             ArrayList(menuItemPrice),
             ArrayList(menuImage))
