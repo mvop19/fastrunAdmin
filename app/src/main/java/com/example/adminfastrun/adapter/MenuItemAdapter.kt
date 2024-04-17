@@ -5,12 +5,15 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.adminfastrun.databinding.ItemItemBinding
 import com.example.adminfastrun.model.AllMenu
+import com.google.firebase.database.DatabaseReference
 
 class MenuItemAdapter(
     private val context: Context,
-    private val menuList: ArrayList<AllMenu>
+    private val menuList: ArrayList<AllMenu>,
+    databaseReference: DatabaseReference
 ) : RecyclerView.Adapter<MenuItemAdapter.AddItemViewHolder>() {
 
     private val itemQuantities = IntArray(menuList.size){1}
@@ -34,8 +37,7 @@ class MenuItemAdapter(
                 val uri = Uri.parse(uriString)
                 foodnameTextView.text = menuItem.foodName
                 priceTextView.text = menuItem.foodPrice
-                foodImageView.setImageResource(menuList[position])
-
+                Glide.with(context).load(uri).into(foodImageView)
                 quantityTextView.text = quantity.toString()
                 minusButton.setOnClickListener {
                     decreaseQuantity(position)
