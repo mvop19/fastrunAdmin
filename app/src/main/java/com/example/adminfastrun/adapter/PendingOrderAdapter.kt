@@ -19,6 +19,9 @@ class PendingOrderAdapter(
 
 interface OnItemClicked{
     fun onItemClickListener(position: Int)
+    fun onItemAcceptClickListener(position: Int)
+    fun onItemDispatchClickListener(position: Int)
+
 }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
         val binding = PendingOrdersItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -52,10 +55,12 @@ interface OnItemClicked{
                             text = "Dispatch"
                             isAccepted = true
                             showToast("Order is accepted")
+                            itemClicked.onItemAcceptClickListener(position)
                         }else{
                             customerNames.removeAt(adapterPosition)
                             notifyItemRemoved(adapterPosition)
                             showToast("Order is dispatched")
+                            itemClicked.onItemDispatchClickListener(position)
                         }
                     }
                 }
