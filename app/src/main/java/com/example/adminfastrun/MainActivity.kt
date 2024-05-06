@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+        auth = FirebaseAuth.getInstance() // Initialize auth here
         binding.addMenu.setOnClickListener {
             val intent = Intent(this,AddItemActivity::class.java)
             startActivity(intent)
@@ -48,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         binding.pendingOrderTextView.setOnClickListener {
             val intent = Intent(this,PendingOrderActivity::class.java)
             startActivity(intent)
+        }
+        binding.logoutButton.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(this,SignUpActivity::class.java))
+            finish()
         }
 
         pendingOrders()

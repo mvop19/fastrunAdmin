@@ -390,6 +390,7 @@
         app:layout_constraintStart_toEndOf="@+id/orderStatusButton"
         app:layout_constraintTop_toTopOf="@+id/orderStatusButton">
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logoutButton"
             android:layout_width="match_parent"
             android:background="@drawable/cardgreen"
             android:layout_height="match_parent">
