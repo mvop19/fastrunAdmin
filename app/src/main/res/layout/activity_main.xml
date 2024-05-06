@@ -302,46 +302,6 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:outlineSpotShadowColor="@color/green"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView8"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/cardView4"
-        app:layout_constraintTop_toTopOf="@+id/cardView4">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/createUser"
-            android:layout_width="match_parent"
-            android:background="@drawable/cardgreen"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/user_plus_01"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_alternates"
-                android:text="Create New User"
-                android:layout_marginTop="28dp"
-                android:textColor="@color/green"
-                app:layout_constraintEnd_toEndOf="@+id/imageView9"
-                app:layout_constraintStart_toStartOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/orderStatusButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
@@ -383,17 +343,20 @@
         android:id="@+id/cardView9"
         android:layout_width="150dp"
         android:layout_height="100dp"
+
+        android:layout_marginTop="60dp"
         android:outlineSpotShadowColor="@color/green"
         app:cardCornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView6"
+        app:layout_constraintEnd_toEndOf="@+id/cardView8"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/orderStatusButton"
-        app:layout_constraintTop_toTopOf="@+id/orderStatusButton">
+        app:layout_constraintStart_toEndOf="@+id/cardView4"
+        app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/logoutButton"
             android:layout_width="match_parent"
-            android:background="@drawable/cardgreen"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
 
             <ImageView
                 android:id="@+id/imageView11"
@@ -409,9 +372,9 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="Log Out"
-                android:layout_marginTop="28dp"
                 android:textColor="@color/red"
                 app:layout_constraintEnd_toEndOf="@+id/imageView11"
                 app:layout_constraintStart_toStartOf="@+id/imageView11"
