@@ -79,11 +79,13 @@ class AddItemActivity : AppCompatActivity() {
                 imageRef.downloadUrl.addOnCompleteListener { downloadUrl ->
                     // Create a new menu item
                     val newItem = AllMenu(
+                        newItemKey,
                         foodName = foodName,
                         foodPrice = foodPrice,
                         foodDescription = foodDescription,
-                        foodIngredient = foodIngredient,
                         foodImage = downloadUrl.toString(),
+                        foodIngredient = foodIngredient,
+
                     )
                     newItemKey?.let { key ->
                         menuRef.child(key).setValue(newItem).addOnSuccessListener {
