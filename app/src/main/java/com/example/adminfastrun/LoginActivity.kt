@@ -60,10 +60,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
         }
-        binding.googleButton.setOnClickListener {
-            val signIntent = googleSignInclient.signInIntent
-            launcher.launch(signIntent)
-        }
+//        binding.googleButton.setOnClickListener {
+//            val signIntent = googleSignInclient.signInIntent
+//            launcher.launch(signIntent)
+//        }
         binding.dontHaveAccountButton.setOnClickListener {
             val intent = Intent(this,SignUpActivity::class.java)
             startActivity(intent)
