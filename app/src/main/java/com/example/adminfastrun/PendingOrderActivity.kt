@@ -83,8 +83,8 @@ class PendingOrderActivity : AppCompatActivity(), PendingOrderAdapter.OnItemClic
     override fun onItemClickListener(position: Int) {
         val intent = Intent(this, OrderDetailsActivity::class.java)
         val userOrderDetails = listOfOrderItem[position]
-        intent.putExtra("userOrderDetails", userOrderDetails)
-        startActivity(intent)
+//        intent.putExtra("userOrderDetails", userOrderDetails)
+//        startActivity(intent)
     }
 
     override fun onItemAcceptClickListener(position: Int) {
